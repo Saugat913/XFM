@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="main.qml">UI/main.qml</file>
+    </qresource>
+    <qresource prefix="/components">
+        <file alias="VerticalLine.qml">UI/Components/VerticalLine.qml</file>
+        <file alias="HorizontalLine.qml">UI/Components/HorizontalLine.qml</file>
+        <file alias="DirectoriesElement.qml">UI/Components/DirectoriesElement.qml</file>
+        <file alias="NewTab.qml">UI/Components/NewTab.qml</file>
+        <file alias="SearchBar.qml">UI/Components/SearchBar.qml</file>
+    </qresource>
+    <qresource prefix="/assests">
+        <file alias="fontello.ttf">UI/Assest/fontello.ttf</file>
+    </qresource>
+</RCC>
