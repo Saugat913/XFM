@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>WindowFrame.qml</file>
+        <file>VerticalLine.qml</file>
+        <file>DirElement.qml</file>
+        <file>WindowButton.qml</file>
+    </qresource>
+</RCC>
