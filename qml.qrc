@@ -5,5 +5,8 @@
         <file>VerticalLine.qml</file>
         <file>DirElement.qml</file>
         <file>WindowButton.qml</file>
+        <file>DirectoryLocation.qml</file>
+        <file>SearchBar.qml</file>
+        <file>DirectoriesData.qml</file>
     </qresource>
 </RCC>

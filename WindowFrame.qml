@@ -2,9 +2,8 @@ import QtQuick 2.2
 import QtQuick.Controls 2.15
 import QtGraphicalEffects 1.15
 
-Rectangle{
+Rectangle {
     id: windowFrame
-
 
     Rectangle {
         id: titleBar
@@ -16,58 +15,55 @@ Rectangle{
         anchors.rightMargin: 0
         anchors.leftMargin: 0
 
-
-    Rectangle {
-        id: currentNameHolder
-        width: 61
-        color: "#ffffff"
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.leftMargin: 6
-        anchors.bottomMargin: 0
-        anchors.topMargin: 0
-
-        Text {
-            id: currentName
-            width: 45
-            height: 17
-            text: qsTr("Home")
-            anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: 12
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-    }
-
-    Button {
-        id: button
-        //text: qsTr("")
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.left: currentNameHolder.right
-        anchors.leftMargin: 3
-        background: Rectangle{
-            color: "transparent"
-        }
-        contentItem: Item {
-            Row{
-                spacing: 5
-            Image{
-                 anchors.verticalCenter: parent.verticalCenter
-                width: 25
-                height:25
-                source: "file:Icons/plus.png"
-            }
+        Rectangle {
+            id: currentNameHolder
+            width: 61
+            color: "#ffffff"
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.leftMargin: 6
+            anchors.bottomMargin: 0
+            anchors.topMargin: 0
 
             Text {
+                id: currentName
+                width: 45
+                height: 17
+                text: qsTr("Home")
                 anchors.verticalCenter: parent.verticalCenter
-                text: qsTr("New Tab")
+                font.pixelSize: 12
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
-        }
-    }
 
+        Button {
+            id: button
+            //text: qsTr("")
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.left: currentNameHolder.right
+            anchors.leftMargin: 3
+            background: Rectangle {
+                color: "transparent"
+            }
+            contentItem: Item {
+                Row {
+                    spacing: 5
+                    Image {
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: 25
+                        height: 25
+                        source: "file:Icons/plus.png"
+                    }
+
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: qsTr("New Tab")
+                    }
+                }
+            }
+        }
     }
 
     Rectangle {
@@ -84,7 +80,7 @@ Rectangle{
         DropShadow {
             anchors.fill: searchSector
             cached: true
-            horizontalOffset:0
+            horizontalOffset: 0
             verticalOffset: 3
             radius: 8.0
             samples: 16
@@ -101,22 +97,25 @@ Rectangle{
                 font.pixelSize: 21
                 font.italic: true
                 font.bold: true
-
             }
-
+        }
+        SearchBar {
+            id: searchBar
+            anchors.right: searchSector.right
+            anchors.rightMargin: 15
+            width: searchSector.width * 0.3
+            height: 25
+            anchors.verticalCenter: searchSector.verticalCenter
         }
     }
 
-
-
-    Rectangle{
-        id:toolBar
-        width:70
+    Rectangle {
+        id: toolBar
+        width: 70
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         anchors.topMargin: -8
         anchors.top: searchSector.bottom
-
 
         Image {
             id: newDocument
@@ -194,7 +193,7 @@ Rectangle{
             anchors.horizontalCenter: parent.horizontalCenter
         }
     }
-    VerticalLine{
+    VerticalLine {
         anchors.top: searchSector.bottom
         anchors.bottom: parent.bottom
         anchors.left: toolBar.right
@@ -213,7 +212,7 @@ Rectangle{
         DropShadow {
             anchors.fill: dirList
             cached: true
-            horizontalOffset:1
+            horizontalOffset: 1
             verticalOffset: 2
             radius: 8.0
             samples: 16
@@ -224,7 +223,7 @@ Rectangle{
             //anchors.leftMargin: 1
             anchors.topMargin: 0
 
-            Column{
+            Column {
                 id: column
 
                 anchors.leftMargin: 20
@@ -239,55 +238,72 @@ Rectangle{
                     font.italic: true
                     font.bold: true
                     anchors.leftMargin: 33
-
                 }
-            DirElement {
-                id: dirElement
-                iconUrl: "file:Icons/star.png"
-                iconDescription: "Favourate"
-                width: parent.width
-                height: 30
-            }
+                DirElement {
+                    id: dirElement
+                    iconUrl: "file:Icons/star.png"
+                    iconDescription: "Favourate"
+                    width: parent.width
+                    height: 30
+                }
 
-            DirElement {
-                id: dirElement1
-                width: parent.width
-                iconUrl: "file:Icons/home.png"
-                height: 30
-            }
+                DirElement {
+                    id: dirElement1
+                    width: parent.width
+                    iconUrl: "file:Icons/home.png"
+                    height: 30
+                }
 
-            DirElement {
-                id: dirElement2
-                iconUrl: "file:Icons/download-folder.png"
-                iconDescription: "Downloads"
-                width: parent.width
-                height: 30
-            }
+                DirElement {
+                    id: dirElement2
+                    iconUrl: "file:Icons/download-folder.png"
+                    iconDescription: "Downloads"
+                    width: parent.width
+                    height: 30
+                }
 
-            DirElement {
-                id: dirElement3
-                iconUrl: "file:Icons/image-gallery.png"
-                iconDescription: "Pictures"
-                width: parent.width
-                height: 30
-            }
+                DirElement {
+                    id: dirElement3
+                    iconUrl: "file:Icons/image-gallery.png"
+                    iconDescription: "Pictures"
+                    width: parent.width
+                    height: 30
+                }
 
-            DirElement {
-                id: dirElement4
-                width: parent.width
-                iconDescription: "Videos"
-                iconUrl: "file:Icons/video-camera.png"
-                height: 30
-            }
+                DirElement {
+                    id: dirElement4
+                    width: parent.width
+                    iconDescription: "Videos"
+                    iconUrl: "file:Icons/video-camera.png"
+                    height: 30
+                }
             }
         }
-
-
-
     }
-/*##^##
+
+
+    /*##^##
 Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
 ##^##*/
+    DirectoryLocation {
+        id: currentDir
+        anchors.left: dirList.right
+        anchors.leftMargin: 50
+        anchors.right: parent.right
+        anchors.top: searchSector.bottom
+        anchors.topMargin: 25
+        height: 30
+    }
+
+    DirectoriesData {
+        anchors {
+            top: currentDir.bottom
+            topMargin: 30
+            right: windowFrame.right
+            left: dirList.right
+            bottom: windowFrame.bottom
+        }
+    }
 }

@@ -7,7 +7,7 @@
         "-I",
         "/usr/share/qtcreator/cplusplus/wrappedQtHeaders/QtCore",
         "-I",
-        "/tmp/QtCreator-lKoxJJ/clang-uiheader-PICSKQ",
+        "/tmp/QtCreator-DGAtEE/clang-uiheader-jUUqxK",
         "-nostdinc",
         "-nostdinc++",
         "-pipe",
